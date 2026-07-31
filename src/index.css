@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-deep: #070b14;
+  --bg-card: #0d1526;
+  --bg-glass: rgba(13,21,38,0.85);
+  --border: rgba(99,102,241,0.18);
+  --neon-g: #00ff88;
+  --neon-b: #00d4ff;
+  --neon-p: #b347ff;
+  --neon-o: #ff6b35;
+  --text-primary: #f0f4ff;
+  --text-muted: #8892a4;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: 'Space Grotesk', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: rgba(99,102,241,0.4); border-radius: 3px; }
+
+/* Grid background */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(99,102,241,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,102,241,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Glass card */
+.glass-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+/* Neon glow text */
+.neon-green { color: var(--neon-g); text-shadow: 0 0 20px rgba(0,255,136,0.5); }
+.neon-blue  { color: var(--neon-b); text-shadow: 0 0 20px rgba(0,212,255,0.5); }
+.neon-purple{ color: var(--neon-p); text-shadow: 0 0 20px rgba(179,71,255,0.5); }
+.neon-orange{ color: var(--neon-o); text-shadow: 0 0 20px rgba(255,107,53,0.5); }
+
+/* Glow borders */
+.glow-green { box-shadow: 0 0 20px rgba(0,255,136,0.15), inset 0 0 20px rgba(0,255,136,0.05); }
+.glow-blue  { box-shadow: 0 0 20px rgba(0,212,255,0.15), inset 0 0 20px rgba(0,212,255,0.05); }
+.glow-purple{ box-shadow: 0 0 20px rgba(179,71,255,0.15), inset 0 0 20px rgba(179,71,255,0.05); }
+
+/* Animated gradient */
+@keyframes gradientShift {
+  0%,100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.gradient-animate {
+  background: linear-gradient(270deg, #6366f1, #00d4ff, #00ff88, #b347ff);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Pulse dot */
+@keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.5)} }
+.pulse-dot { animation: pulse-dot 2s infinite; }
+
+/* Upload area */
+.upload-zone {
+  border: 2px dashed rgba(99,102,241,0.3);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+.upload-zone:hover, .upload-zone.active {
+  border-color: var(--neon-b);
+  box-shadow: 0 0 30px rgba(0,212,255,0.2);
+  background: rgba(0,212,255,0.05);
+}
+
+/* Metric card */
+.metric-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+.metric-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99,102,241,0.4);
+}
+
+/* Tab button */
+.tab-btn { transition: all 0.25s ease; }
+.tab-btn.active {
+  background: linear-gradient(135deg, rgba(99,102,241,0.3), rgba(0,212,255,0.15));
+  border-color: rgba(0,212,255,0.4);
+  color: var(--neon-b);
+}
+
+/* Shine animation */
+@keyframes shine {
+  0% { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(300%) skewX(-15deg); }
+}
+.shine-effect::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  animation: shine 3s infinite;
+}
+
+/* Loader */
+@keyframes spin { to { transform: rotate(360deg); } }
+.loader { animation: spin 1s linear infinite; }
+
+/* Video backdrop */
+.video-frame {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid rgba(99,102,241,0.2);
+}
+
+/* Tooltip */
+.custom-tooltip {
+  background: rgba(7,11,20,0.95);
+  border: 1px solid rgba(99,102,241,0.3);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+}
+
+/* India map highlight */
+.india-stock {
+  background: linear-gradient(135deg, rgba(255,107,53,0.1), rgba(179,71,255,0.1));
+  border: 1px solid rgba(255,107,53,0.25);
+}
+
+/* Fade-in */
+@keyframes fadeInUp {
+  from { opacity:0; transform:translateY(24px); }
+  to { opacity:1; transform:translateY(0); }
+}
+.fade-in-up { animation: fadeInUp 0.5s ease forwards; }
+
+/* Number ticker */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.count-animate { animation: countUp 0.6s ease forwards; }
