@@ -15,6 +15,32 @@ A full-stack data analytics and visualization platform that turns raw datasets i
 
 ---
 
+## 🎬 Demo
+
+<p align="center">
+  <a href="docs/demo/DataVision-Pro-demo.mp4"><img src="docs/demo/DataVision-Pro-demo.gif" width="800" alt="DataVisionPro walkthrough: uploading the UCI Wine CSV, then the Overview, Data Quality, Statistics, Visualizations, Insights and Data Table views" /></a>
+  <br/><sub>Real recording of the app running locally (<code>npm run server</code> + <code>npm run dev</code>) analysing the public
+  <a href="https://archive.ics.uci.edu/dataset/109/wine">UCI Wine dataset</a> (178 rows × 14 columns, exported from scikit-learn). <a href="docs/demo/DataVision-Pro-demo.mp4">Watch the MP4</a>.</sub>
+</p>
+
+## 📸 Screenshots
+
+| Upload | Overview |
+|---|---|
+| ![Upload screen](docs/screenshots/desktop-upload.png) | ![Dataset overview](docs/screenshots/desktop-overview.png) |
+| **Data quality** | **Statistics** |
+| ![Data quality](docs/screenshots/desktop-data-quality.png) | ![Statistics](docs/screenshots/desktop-statistics.png) |
+| **Visualizations** | **Insights** |
+| ![Visualizations](docs/screenshots/desktop-visualizations.png) | ![Insights](docs/screenshots/desktop-insights.png) |
+
+| Mobile — upload | Mobile — overview |
+|---|---|
+| <img src="docs/screenshots/mobile-upload.png" width="260" alt="Mobile upload" /> | <img src="docs/screenshots/mobile-overview.png" width="260" alt="Mobile overview" /> |
+
+More: [data table](docs/screenshots/desktop-data-table.png)
+
+---
+
 ## 📑 Table of Contents
 
 - [About](#-about)
